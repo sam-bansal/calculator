@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button multiply;
     private Button equal;
     private Button clear;
+    private Button decimal;
 
     private TextView info;
     private TextView result;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private final char MULTIPLICATION = '*';
     private final char SUBTRACTION = '-';
     private final char DIVISION = '/';
+
     private final char EQU = 0;
     private double val1 = Double.NaN;
     private double val2;
@@ -47,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupUIiews();
+
+        decimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                info.setText(info.getText().toString() + ".");
+            }
+        });
 
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void setupUIiews(){
+
+        zero = (Button)findViewById(R.id.btn0);
         one = (Button)findViewById(R.id.btn1);
         two = (Button)findViewById(R.id.btn2);
         three = (Button)findViewById(R.id.btn3);
@@ -174,15 +185,19 @@ public class MainActivity extends AppCompatActivity {
         seven = (Button)findViewById(R.id.btn7);
         eight = (Button)findViewById(R.id.btn8);
         nine = (Button)findViewById(R.id.btn9);
-        zero = (Button)findViewById(R.id.btn0);
+        decimal = (Button) findViewById(R.id.btndecimal);
+
         divide = (Button)findViewById(R.id.btndivide);
         clear = (Button)findViewById(R.id.btnclear);
         add = (Button)findViewById(R.id.btnadd);
         minus = (Button)findViewById(R.id.btnminus);
         multiply = (Button)findViewById(R.id.btnmult);
+        equal = (Button) findViewById(R.id.btnequal);
+
         info = (TextView) findViewById(R.id.tvcontrol);
         result = (TextView) findViewById(R.id.tvresult);
-        equal = (Button) findViewById(R.id.btnequal);
+
+
     }
     private void compute(){
         if(!Double.isNaN(val1)){
