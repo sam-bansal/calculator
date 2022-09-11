@@ -9,19 +9,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button zero;
-    private Button one;
-    private Button two;
-    private Button three;
-    private Button four;
-    private Button five;
-    private Button six;
-    private Button seven;
-    private Button eight;
-    private Button nine;
-    private Button add;
-    private Button divide;
-    private Button minus;
+    private Button zero;private Button one;private Button two;private Button three;private Button four;
+    private Button five;private Button six;private Button seven;private Button eight;private Button nine;
+    private Button add;private Button divide;private Button minus;
     private Button multiply;
     private Button equal;
     private Button clear;
